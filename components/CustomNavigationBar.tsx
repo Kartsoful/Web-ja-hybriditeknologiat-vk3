@@ -8,11 +8,13 @@ export default function CustomNavigationBar({
   options,
   back,
 }: StackHeaderProps) {
+    
   const title = getHeaderTitle(options, route.name);
 
   return (
     <Appbar.Header>
-      <Appbar.Content title={title} />
+       <Appbar.Content title={title} />
+       {/*Tehtäväannossa kovakoodattuna title = "MD Nav Demo" */}
       {back ? (
         <Appbar.BackAction onPress={() => navigation.goBack()} />
       ) : (
