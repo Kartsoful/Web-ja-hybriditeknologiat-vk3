@@ -10,17 +10,16 @@ export default function CustomNavigationBar({
 }: StackHeaderProps) {
   const title = getHeaderTitle(options, route.name);
 
-
   return (
     <Appbar.Header>
       <Appbar.Content title={title} />
-      {title === "Home" ? (
+      {back ? (
+        <Appbar.BackAction onPress={() => navigation.goBack()} />
+      ) : (
         <Appbar.Action
           icon="arrow-right"
           onPress={() => navigation.navigate("SecondScreen")}
         />
-      ) : (
-        <Appbar.BackAction onPress={() => navigation.goBack()} />
       )}
     </Appbar.Header>
   );

@@ -8,20 +8,6 @@ type Props = NativeStackScreenProps<RootStackParamList, "Home">;
 
 export default function HomeScreen({ navigation }: Props) {
 
-  useLayoutEffect(() => {
-    navigation.setOptions({
-      headerRight: () => (
-        <Ionicons
-          name="arrow-forward"
-          size={24}
-          style={{ marginRight: 0, padding: 0 }}
-          color= '#ff0000'
-          onPress={() => navigation.navigate("SecondScreen")}
-        />
-      ),
-    });
-  }, []);
-
   return (
     <View style={style.container}>
       <Text style={style.text}>HomeScreen</Text>
