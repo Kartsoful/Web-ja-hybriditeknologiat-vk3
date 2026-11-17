@@ -1,9 +1,10 @@
 import { Ionicons } from "@expo/vector-icons";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import React, { useLayoutEffect } from "react";
-import { View, Text, Button, StyleSheet } from "react-native";
+import { View, Text, StyleSheet } from "react-native";
+import { RootStackParamList } from "../types/navigation";
 
-type Props = NativeStackScreenProps<any>;
+type Props = NativeStackScreenProps<RootStackParamList, "Home">;
 
 export default function HomeScreen({ navigation }: Props) {
 
@@ -14,6 +15,7 @@ export default function HomeScreen({ navigation }: Props) {
           name="arrow-forward"
           size={24}
           style={{ marginRight: 0, padding: 0 }}
+          color= '#ff0000'
           onPress={() => navigation.navigate("SecondScreen")}
         />
       ),
@@ -22,7 +24,7 @@ export default function HomeScreen({ navigation }: Props) {
 
   return (
     <View style={style.container}>
-      <Text>HomeScreen</Text>
+      <Text style={style.text}>HomeScreen</Text>
     </View>
   );
 }
@@ -33,4 +35,7 @@ const style = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
+  text: {
+    fontSize: 20
+  }
 });
